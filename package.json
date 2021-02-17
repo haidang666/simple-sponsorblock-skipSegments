@@ -1,0 +1,22 @@
+{
+  "name": "simple-sponsorblock-skipsegments",
+  "version": "0.0.1",
+  "description": "only call SponsorBlock get skipSegments",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=html mocha"
+  },
+  "keywords": [
+    "sponsorblock",
+    "skipsegments"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaiDang666/simple-sponsorblock-skipSegments.git"
+  },
+  "author": "HaiDang666",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "miniget": "^4.2.0"
+  }
+}
