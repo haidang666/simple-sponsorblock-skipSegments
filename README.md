@@ -5,7 +5,10 @@ only call SponsorBlock get skipSegments, return empty array if there is error
 ```
 npm install --save haidang666/simple-sponsorblock-skipSegments
 ```
-
+or 
+```
+npm install --save ytb-skipsegments
+```
 ## Example 
 ```node
 const { getSegments, ALL_CATEGORIES } = require('simple-sponsorblock-skipsegments');

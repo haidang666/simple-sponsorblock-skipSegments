@@ -1,6 +1,6 @@
 {
   "name": "ytb-skipsegments",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "only call SponsorBlock get skipSegments",
   "main": "index.js",
   "scripts": {
