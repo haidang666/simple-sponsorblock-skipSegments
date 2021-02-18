@@ -1,14 +1,27 @@
 'use strict';
-
 const miniget = require('miniget');
 
-miniget('http://mywebsite.com', (err, res, body) => {
-  console.log('webpage contents: ', body);
-});
+const BASE_URL = "https://sponsor.ajay.app";
+const ALL_CATEGORIES = ["sponsor", "intro", "outro", "interaction", "selfpromo", "music_offtopic"];
 
-// with await
-let body = await miniget('http://yourwebsite.com').text();
+async function getSegments (videoID, categories = []) {
+  let query = `?videoID=${videoID}`;
 
-// from here
-const serverAddress = "https://sponsor.ajay.app";
-const categoryList = ["sponsor", "intro", "outro", "interaction", "selfpromo", "music_offtopic"];
+  if (categories.length > 1) {
+    query += `&categories=${JSON.stringify(categories)}`;
+  } else if (categories.length === 1) {
+    query += `&category=${categories[0]}`;
+  }
+
+  try {
+    const res = await miniget(`${BASE_URL}/api/skipSegments${query}`).text();
+    return JSON.parse(res);
+  } catch (error) {
+    return [];
+  }
+}
+
+module.exports = {
+  getSegments,
+  ALL_CATEGORIES
+}
