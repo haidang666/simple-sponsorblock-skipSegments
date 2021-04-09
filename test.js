@@ -11,6 +11,9 @@ async function run() {
 
   const all_categories = await getSegments(videoID, ALL_CATEGORIES);
   console.log('all_categories ----\n', all_categories);
+
+  const prettyFormat = await getSegments('26EivpCPHnQ', ALL_CATEGORIES, true);
+  console.log('prettyFormat ----\n', prettyFormat);
 } 
 
 run();
